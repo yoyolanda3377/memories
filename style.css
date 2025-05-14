@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 6vw;
   margin-bottom: 0;
   color: #d6336c;
 }
@@ -43,7 +43,7 @@ h1 {
 
 footer {
   margin-top: 50px;
-  font-size: 1.1em;
+  font-size: 4vw;
   color: #444;
 }
 .memory-thumb {
@@ -93,8 +93,8 @@ footer {
 h2 {
   text-align: left;
   color: #d6336c;
-  font-size: 1.5em;
-  margin-top: 50px;
+  font-size: 4.5vw;
+  margin-top: 6vw;
   padding-left: 10px;
 }
 
@@ -169,14 +169,21 @@ h2 {
   background: #ffeef3;
 }
 .memory-thumb {
-  flex: 0 0 auto;
-  width: 160px;
+  width: 40vw; /* 或固定 140px */
   height: auto;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-.memory-thumb:hover {
-  transform: scale(1.05);
+.drawer img, iframe {
+  max-width: 100%;
+  height: auto;
 }
+.memory-scroll {
+  overflow-x: auto;
+  padding: 10px 12px;
+  gap: 12px;
+}
+.popup-content {
+  width: 90%;
+  height: 80%;
+  max-width: 400px;
+}
+
