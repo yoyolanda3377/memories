@@ -6,36 +6,69 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>我们的回忆</h1>
-    <p class="subtitle">一起走过的点点滴滴</p>
+  <h1>520特集</h1>
+  <p>栋栋宝宝专属</p>
+  <nav class="section-nav">
+    <a href="#food">🍱 好吃的</a>
+    <a href="#places">🌍 去过的地方</a>
+    <a href="#photos">📸 合照专区</a>
+  </nav>  
+  <h2 id="food">🍱 一起吃过的好吃的</h2>
+<div class="memory-section">
+  <img class="memory-thumb" src="images/food1.jpg"
+       data-large="images/food1-large.jpg"
+       data-text="一起吃寿司那天，我学你夹芥末被呛得咳嗽～" />
+</div>
 
-    <div class="memory">
-      <img src="images/memory1.jpg" alt="回忆1">
-      <p>第一次见面的那天，阳光刚刚好。</p>
-    </div>
+<h2 id="places">🌍 一起去过的地方</h2>
+<div class="memory-section">
+  <img class="memory-thumb" src="images/place1.jpg"
+       data-large="images/place1-large.jpg"
+       data-text="那天下雪，我们一起牵着手走过公园。" />
+</div>
 
-    <div class="memory">
-      <img src="images/memory2.jpg" alt="回忆2">
-      <p>东京的夜景，和你并肩走过的路。</p>
-    </div>
-
-    <div class="memory">
-      <img src="images/memory3.jpg" alt="回忆3">
-      <p>每天的视频电话，是最幸福的时光。</p>
-    </div>
+<h2 id="photos">📸 合照专区</h2>
+<div class="memory-section">
+  <img class="memory-thumb" src="images/us1.jpg"
+       data-large="images/us1-large.jpg"
+       data-text="这是你最帅的一张（别否认！）" />
+</div>
 
     <footer>
-      <p>❤️ 我们已经在一起 <span id="daysTogether"></span> 天了</p>
+      <p>❤️ 我们已经在一起 <span id="daysTogether"></span></p>
     </footer>
+    <nav class="section-nav">
+      <a href="#food">🍱 好吃的</a>
+      <a href="#places">🌍 去过的地方</a>
+      <a href="#photos">📸 合照专区</a>
+    </nav>  
   </div>
 
   <script>
-    const startDate = new Date("2024-09-18");
-    const today = new Date();
-    const diffTime = today - startDate;
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-    document.getElementById("daysTogether").textContent = diffDays;
+    const startDate = new Date("2024-09-18T00:00:00");
+  
+    function updateTime() {
+      const now = new Date();
+      const diff = now - startDate;
+  
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+  
+      document.getElementById("daysTogether").textContent =
+        `${days}天 ${hours}小时 ${minutes}分 ${seconds}秒`;
+    }
+  
+    updateTime(); // 初始化显示
+    setInterval(updateTime, 1000); // 每  
   </script>
+  <div class="drawer">
+    <span id="drawer-close">✕</span>
+    <img id="drawer-img" src="" alt="详细图">
+    <p id="drawer-text"></p>
+  </div>
+  <script src="script.js"></script>  
 </body>
 </html>
