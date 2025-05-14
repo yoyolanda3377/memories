@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>我们的回忆</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>我们的回忆</h1>
+    <p class="subtitle">一起走过的点点滴滴</p>
+
+    <div class="memory">
+      <img src="images/memory1.jpg" alt="回忆1">
+      <p>第一次见面的那天，阳光刚刚好。</p>
+    </div>
+
+    <div class="memory">
+      <img src="images/memory2.jpg" alt="回忆2">
+      <p>东京的夜景，和你并肩走过的路。</p>
+    </div>
+
+    <div class="memory">
+      <img src="images/memory3.jpg" alt="回忆3">
+      <p>每天的视频电话，是最幸福的时光。</p>
+    </div>
+
+    <footer>
+      <p>❤️ 我们已经在一起 <span id="daysTogether"></span> 天了</p>
+    </footer>
+  </div>
+
+  <script>
+    const startDate = new Date("2024-09-18");
+    const today = new Date();
+    const diffTime = today - startDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    document.getElementById("daysTogether").textContent = diffDays;
+  </script>
+</body>
+</html>
