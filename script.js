@@ -7,12 +7,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   thumbnails.forEach(thumb => {
     thumb.addEventListener("click", () => {
+      // 显示抽屉说明
       const imgSrc = thumb.dataset.large;
       const text = thumb.dataset.text;
 
       drawerImage.src = imgSrc;
       drawerText.textContent = text;
       drawer.classList.add("open");
+
+      // 同时触发小游戏弹窗（100% 概率）
+      tryShowGamePopup();
     });
   });
 

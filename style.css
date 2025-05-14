@@ -149,3 +149,34 @@ h2 {
   gap: 15px;
   margin-bottom: 40px;
 }
+.memory-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 12px;
+  padding: 10px;
+}
+
+.memory-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.memory-scroll::-webkit-scrollbar-thumb {
+  background: #d6336c;
+  border-radius: 4px;
+}
+.memory-scroll::-webkit-scrollbar-track {
+  background: #ffeef3;
+}
+.memory-thumb {
+  flex: 0 0 auto;
+  width: 160px;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.memory-thumb:hover {
+  transform: scale(1.05);
+}
